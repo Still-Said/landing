@@ -385,6 +385,18 @@
     <div class="progress-dots" id="dots-step1"></div>
 
     <div class="field">
+      <div class="label">Your name</div>
+      <div class="hint">So we know who to send your keepsake to.</div>
+      <input type="text" id="input-yourName" placeholder="e.g., Priya" oninput="updateContinue1()">
+    </div>
+
+    <div class="field">
+      <div class="label">Your email address</div>
+      <div class="hint">We'll use this to send you your keepsake. Nothing else.</div>
+      <input type="email" id="input-yourEmail" placeholder="e.g., you@gmail.com" oninput="updateContinue1()">
+    </div>
+
+    <div class="field">
       <div class="label">Who is this person to you?</div>
       <div class="hint">This helps us understand the relationship context.</div>
       <div class="chips" id="chips-relationship">
@@ -571,6 +583,8 @@
 <script>
   // ── STATE ──
   const state = {
+    yourName: '',
+    yourEmail: '',
     relationship: '',
     personName: '',
     personStatus: '',
@@ -638,8 +652,11 @@
 
   // ── CONTINUE VALIDATORS ──
   function updateContinue1() {
+    state.yourName = document.getElementById('input-yourName').value.trim();
+    state.yourEmail = document.getElementById('input-yourEmail').value.trim();
     state.personName = document.getElementById('input-personName').value.trim();
-    const ok = state.relationship && state.personName && state.personStatus;
+    const emailValid = state.yourEmail.includes('@') && state.yourEmail.includes('.');
+    const ok = state.yourName && emailValid && state.relationship && state.personName && state.personStatus;
     document.getElementById('btn-continue1').disabled = !ok;
   }
 
@@ -658,6 +675,8 @@
   // ── BUILD REVIEW ──
   function buildReview() {
     const items = [
+      { label: 'Your name', value: state.yourName || '—' },
+      { label: 'Your email', value: state.yourEmail || '—' },
       { label: 'Person', value: state.personName + (state.relationship ? ' (' + state.relationship + ')' : '') },
       { label: 'Status', value: state.personStatus === 'Yes, they\'re still here' ? 'Still with me' : state.personStatus === 'No, they\'ve passed' ? 'Has passed' : '—' },
       { label: 'Nicknames', value: state.nicknames || '—' },
@@ -686,6 +705,9 @@
     errBox.style.display = 'none';
 
     const payload = {
+      yourName: state.yourName,
+      yourEmail: state.yourEmail,
+      _replyto: state.yourEmail,
       personName: state.personName,
       relationship: state.relationship,
       personStatus: state.personStatus === "Yes, they're still here" ? 'Still with me' : 'Has passed',
