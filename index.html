@@ -565,8 +565,43 @@
 
   .pilot-step-body p { font-size: 15px; }
 
+  /* ─── FAQ ─── */
+  #faq { background: var(--parchment); }
+
+  .faq-list {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--card-border);
+  }
+
+  .faq-item {
+    padding: 32px 40px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .faq-answer {
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 640px;
+  }
+
   /* ─── FOUNDER ─── */
-  #founder { background: var(--parchment); }
+  #founder { background: var(--cream); }
 
   .founder-note {
     max-width: 600px;
@@ -704,7 +739,7 @@
 <!-- NAV -->
 <nav id="main-nav">
   <a href="#" class="nav-logo">StillSaid</a>
-  <a href="/landing/intake.html" class="nav-cta">Try it out</a>
+  <a href="/landing/intake.html" class="nav-cta">Start your intake</a>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -717,8 +752,8 @@
         You have years of messages with someone who matters to you — or a group that does. We turn them into a keepsake of the things they actually said — their phrases, their humor, the way they signed off. Curated by meaning, not by date.
       </p>
       <div class="hero-actions">
-        <a href="/landing/intake.html" class="btn-primary">Try it out</a>
-        <p class="hero-trust">Nothing is invented or inferred. Every moment links back to the original messages.</p>
+        <a href="/landing/intake.html" class="btn-primary">Start your intake</a>
+        <p class="hero-trust">You receive a self-contained keepsake file — yours to keep, no login needed.<br>Nothing is invented or inferred. Every moment links back to the original messages.</p>
       </div>
     </div>
 
@@ -863,10 +898,10 @@
       The first keepsake was built from messages with someone who had died — years of conversations that were too painful to read through and too important to leave buried. That is still the sharpest version of the problem.
     </p>
     <p style="max-width:560px;margin:24px auto 0;line-height:1.8;color:var(--ink-soft);">
-      But it is not the only one. A family group where three generations talk over each other. A friend group from college that has fifteen years of inside jokes. A team chat from a job that mattered. A retirement gift. A wedding gift. A parent who is still here and has no idea how much of themselves they have put into messages over the years.
+      But it is not the only one. A parent who is still here and has no idea how much of themselves they have put into messages over the years. A partner you have been texting for a decade. A best friend who signs off the same way every single time. A sibling whose humor lives entirely in voice notes and typos.
     </p>
     <p style="max-width:560px;margin:24px auto 0;line-height:1.8;color:var(--ink-soft);">
-      If the archive matters, the keepsake is worth making. You do not have to be grieving to want it.
+      If the conversation matters, the keepsake is worth making. You do not have to be grieving to want it.
     </p>
   </div>
 </section>
@@ -1014,6 +1049,42 @@
           <h4>Review and tell us what feels right</h4>
           <p>You read through. Anything that doesn't belong, you remove. The final keepsake reflects what you want kept — in their words, exactly as they wrote them.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">What people ask us</span>
+      <h2>Before you decide</h2>
+    </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <div class="faq-question">"What do I actually get back?"</div>
+        <div class="faq-answer">A password-protected keepsake file with 25–70 curated moments, each linking back to the original messages. It works on your phone, offline, at 2am. No login required, no app to install. The file is yours — only you have the password.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"How long does it take?"</div>
+        <div class="faq-answer">The intake takes about five minutes. During early access, your keepsake is typically ready within a few days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"What if our messages are in multiple languages?"</div>
+        <div class="faq-answer">We preserve everything exactly as written — Hindi, Hinglish, English, Spanish, typos, code-switching, invented words. We don't translate or clean up anything. That's the point.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"Can I do this for someone who's still here?"</div>
+        <div class="faq-answer">Absolutely. It works for any one-on-one conversation that matters to you — a parent, a partner, a sibling, a best friend. Living or not. Group chat support is coming soon.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"What does it cost?"</div>
+        <div class="faq-answer">Early access keepsakes are free. We're looking for people willing to share honest feedback in exchange.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"What happens to my messages after?"</div>
+        <div class="faq-answer">They're processed once and deleted. We don't store your archive, train on it, or keep a copy. Your keepsake file lives on your device — not ours.</div>
       </div>
     </div>
   </div>
